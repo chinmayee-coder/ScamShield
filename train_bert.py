@@ -120,6 +120,9 @@ epochs = 3
 
 model.train()
 
+best_val_accuracy = 0
+
+
 for epoch in range(epochs):
 
     train_loss = 0
