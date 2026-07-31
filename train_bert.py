@@ -200,6 +200,13 @@ for epoch in range(epochs):
         f"Validation Accuracy: {val_accuracy:.4f}"
     )
 
-    model.train()
+print(
+    f"Epoch {epoch + 1}, "
+    f"Training Loss: {train_loss / len(train_dataloader):.4f}, "
+    f"Validation Loss: {val_loss / len(val_dataloader):.4f}, "
+    f"Validation Accuracy: {val_accuracy:.4f}"
+)
 
+if epoch < epochs - 1:
+    model.train()
 
