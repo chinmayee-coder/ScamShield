@@ -16,15 +16,18 @@ from sklearn.model_selection import train_test_split
 # 1. Load dataset
 # -----------------------------
 
-df = pd.read_csv("spam.csv")
+df = pd.read_csv("data/processed/final_dataset.csv")
+texts = df["text"].tolist()
 
-texts = df["Message"].tolist()
-
-labels = df["spamORham"].map({
+labels = df["label"].map({
     "ham": 0,
     "spam": 1
 }).tolist()
+print("Dataset Shape:", df.shape)
+print(df.head())
 
+print("\nLabel Distribution:")
+print(df["label"].value_counts())
 
 # -----------------------------
 # 2. Train / Validation / Test split
